@@ -39,35 +39,29 @@ print(df[target_word] / chapter_count)
  
 The easiest way to understand what term frequency (TF) is, is to use an example. TF of the word "война" can be defined as the number of times that the word "война" appears in the text of a chapter, divided by the total number of words in that chapter.
 
+Let's try to calculate the frequency of the word "гостья" in chapter 15. As a reminder, our chapters are numbered starting from 0. The word "гостья" occurs 10 times in this chapter, and there are a total of 1,359 words in the chapter.
+
+The frequency of the word "гостья" in Chapter 15 is 101,359, which is equal to 0.007358351729213.
+
 ```python
 def read_data():
     data = open('/Users/imac/Downloads/war_peace/war_peace_processed.txt', 'rt').read()
     return data.split('\n')
 
 data = read_data()
-
-word_counts = {}
-for word in data:
-    word_counts[word] = word_counts.get(word, 0) + 1
-    
-target_word = "князь"
-print(word_counts[target_word])
-
-df, chapter_count = {}, 0
-chapter = {}
+target_word = 'князь'
+target_chapter = 13
+chapter, count, chapter_count = {}, 0, 0
 for word in data + ['[new chapter]']:
     if word == '[new chapter]':
-        chapter = {}
+        if chapter_count == target_chapter:
+            print(chapter[target_word] / count)
+        chapter, count = {}, 0
         chapter_count += 1
         continue
     if word not in chapter:
         chapter[word] = 1
-        df[word] = df.get(word, 0) + 1
     else:
         chapter[word] += 1
-print(df[target_word] / chapter_count)
+    count += 1
 ```
-
-Let's try to calculate the frequency of the word "гостья" in chapter 15. As a reminder, our chapters are numbered starting from 0. The word "гостья" occurs 10 times in this chapter, and there are a total of 1,359 words in the chapter.
-
-The frequency of the word "гостья" in Chapter 15 is 101,359, which is equal to 0.007358351729213.
