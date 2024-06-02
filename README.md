@@ -35,13 +35,13 @@ print(df[target_word] / chapter_count)
 ```
 
 
- calculate the frequency of a single word's use in a document (**term frequency**, or TF).
+ calculate the frequency of a single word's use in a document (**term frequency**, or tf).
  
-The easiest way to understand what term frequency (TF) is, is to use an example. TF of the word "война" can be defined as the number of times that the word "война" appears in the text of a chapter, divided by the total number of words in that chapter.
+The easiest way to understand what term frequency (tf) is, is to use an example. TF of the word "война" can be defined as the number of times that the word "война" appears in the text of a chapter, divided by the total number of words in that chapter.
 
 Let's try to calculate the frequency of the word "гостья" in chapter 15. As a reminder, our chapters are numbered starting from 0. The word "гостья" occurs 10 times in this chapter, and there are a total of 1,359 words in the chapter.
 
-The frequency of the word "гостья" in Chapter 15 is 101,359, which is equal to 0.007358351729213.
+The frequency of the word "гостья" in chapter 15 is 101,359, which is equal to 0.007358351729213.
 
 ```python
 def read_data():
@@ -74,4 +74,48 @@ It is calculated as the product of two factors: term frequency (tf) and inverse 
 Term frequency (tf) measures how often a word occurs in a document, while inverse document frequency (idf) measures the importance of a word across all documents in a collection.
 To calculate the IDF, you need to divide 1 by the document frequency.
 
-We will not use the raw values of TF and IDF, but their log transformations, that is, the logarithm of (1 + TF) and the logarithm of IDF.
+We will not use the raw values of TF and IDF, but their log transformations, that is, the logarithm of (1 + tf) and the logarithm of (idf).
+
+As an example, let's calculate the tf * idf score for the word "Анна" in chapter 4. The word "Анна" appears 7 times in this chapter (tf), while there are 1,060 words in chapter 4 (chapter_size), and the word "Anna" is mentioned 32 times out of 171 chapters in total (df).
+
+Thus, the tf * idf of the given word in this chapter will be equal to: math.log (1 + (tf / chapter_size)) * math.log (1 / df), which is approximately 0.01103. Let's write a program that calculates and displays the tf * idf value of a given word (target_word) in a specific chapter (target_chapter).
+
+```python
+import math
+
+def read_data():
+    data = open('/Users/imac/Downloads/war_peace/war_peace_processed.txt', 'rt').read()
+    return data.split('\n')
+
+data = read_data()
+target_word = 'князь'
+target_chapter = 13
+df, chapter_count = {}, 0
+chapter = {}
+for word in data + ['[new chapter]']:
+    if word == '[new chapter]':
+        chapter = {}
+        chapter_count += 1
+        continue
+    if word not in chapter:
+        chapter[word] = 1
+        df[word] = df.get(word, 0) + 1
+    else:
+        chapter[word] += 1
+chapter, count, current_chapter = {}, 0, 0
+for word in data + ['[new chapter]']:
+    if word == '[new chapter]':
+        if target_chapter == current_chapter:
+            print(math.log(1 + chapter[target_word] / count) * math.log(chapter_count / df[target_word]))
+        chapter, count = {}, 0
+        current_chapter += 1
+        continue
+    if word not in chapter:
+        chapter[word] = 1
+    else:
+        chapter[word] += 1
+    count += 1
+```
+
+Now that we know how to calculate the tf * idf value for each word in a chapter, we can identify those words that are most "distinctive" for that chapter. These words could serve as a kind of title for the chapter. Let's write some code that will display the three words with the highest tf * idf values in a given chapter in descending order. For example, if we were to analyze chapter 4, the output would be "павловна анна прядильной".
+
