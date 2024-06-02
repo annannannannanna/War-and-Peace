@@ -65,3 +65,13 @@ for word in data + ['[new chapter]']:
         chapter[word] += 1
     count += 1
 ```
+If a word is frequently used in a text, it is likely that the text is about the subject or action described by that word. For instance, if a book uses the word "cat" repeatedly, it is probably about these animals. However, the word "and" may appear in almost every text, so it may not be useful to include it in our analysis. Therefore, when analyzing a text for significant words, we need to consider both the frequency of words and their relevance to the subject matter. We want to identify the most common words, but also exclude those that are not informative because they are used so often.
+
+This task can be solved effectively using tf * idf, a statistical measure for assessing the significance of a word in a text. To put it simply, tf * idf is a measure of how unique a word is in a document compared to other words. 
+
+It is calculated as the product of two factors: term frequency (tf) and inverse document frequency (idf). 
+
+Term frequency (tf) measures how often a word occurs in a document, while inverse document frequency (idf) measures the importance of a word across all documents in a collection.
+To calculate the IDF, you need to divide 1 by the document frequency.
+
+We will not use the raw values of TF and IDF, but their log transformations, that is, the logarithm of (1 + TF) and the logarithm of IDF.
