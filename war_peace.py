@@ -2,7 +2,7 @@ import math
 from operator import itemgetter
 
 def read_data():
-    data = open('/Users/imac/Downloads/war_peace/war_peace_processed.txt', 'rt').read()
+    data = open('/Users/imac/Documents/war_peace/war_peace_processed.txt', 'rt').read()
     return data.split('\n')
 
 data = read_data()
