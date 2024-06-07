@@ -60,6 +60,6 @@ Thus, the tf * idf of the given word in this chapter will be equal to: math.log 
 
 war_peace_4.py
 
-Now that we know how to calculate the tf * idf value for each word in a chapter, we can identify those words that are most "distinctive" for that chapter. These words could serve as a kind of title for the chapter. Let's write some code that will display the three words with the highest tf * idf values in a given chapter in descending order. For example, if we were to analyze chapter 4, the output would be "павловна анна прядильной".
+Now that we know how to calculate the tf * idf value for each word in a chapter, we can identify those words that are most "distinctive" for that chapter. These words could serve as a kind of title for the chapter. Let's write some code that will display the three words with the highest tf * idf values in a given chapter in descending order. For example, if we were to analyze chapter 4, the output would be "павловна анна тетушку".
 
 war_peace_5.py
