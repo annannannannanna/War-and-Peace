@@ -23,7 +23,7 @@ The text consists of 171 chapters, and the word "человек" occurs in 115 o
 The df for the word "человек" is therefore 115/171 = 0.67251462
 
 
-[war_peace_2.py](http://https://github.com/annannannannanna/War-and-Peace/blob/52e407294c03df284220d13d53f24c89996ab01f/war_peace_2.py)
+[war_peace_2.py](https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_2.py)
 
 
  calculate the frequency of a single word's use in a document (**term frequency**, or tf).
@@ -38,7 +38,7 @@ The frequency of the word "гостья" in chapter 15 is 101,359, which is equa
 
 Let's write a program to calculate the frequency of a given word "target_word" in a specific chapter "target_chapter"
 
-[war_peace_3.py](http://https://github.com/annannannannanna/War-and-Peace/blob/52e407294c03df284220d13d53f24c89996ab01f/war_peace_3.py)
+[war_peace_3.py](https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_3.py)
 
 If a word is frequently used in a text, it is likely that the text is about the subject or action described by that word. For instance, if a book uses the word "cat" repeatedly, it is probably about these animals. 
 
@@ -58,8 +58,8 @@ As an example, let's calculate the tf * idf score for the word "Анна" in cha
 
 Thus, the tf * idf of the given word in this chapter will be equal to: math.log (1 + (tf / chapter_size)) * math.log (1 / df), which is approximately 0.01103. Let's write a program that calculates and displays the tf * idf value of a given word (target_word) in a specific chapter (target_chapter).
 
-[war_peace_4.py](http://https://github.com/annannannannanna/War-and-Peace/blob/52e407294c03df284220d13d53f24c89996ab01f/war_peace_4.py)
+[war_peace_4.py](https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_4.py)
 
 Now that we know how to calculate the tf * idf value for each word in a chapter, we can identify those words that are most "distinctive" for that chapter. These words could serve as a kind of title for the chapter. Let's write some code that will display the three words with the highest tf * idf values in a given chapter in descending order. For example, if we were to analyze chapter 4, the output would be "павловна анна тетушку".
 
-[war_peace_5.py](http://https://github.com/annannannannanna/War-and-Peace/blob/52e407294c03df284220d13d53f24c89996ab01f/war_peace_4.py)
+[war_peace_5.py](https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_5.py)
