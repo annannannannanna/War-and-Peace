@@ -7,7 +7,7 @@ The get method will help you find out which value corresponds to a specific key 
 
 The result will show the number of times the target word was found in the text. For example, if the target word is "**князь**", the answer will be 1,289.
 
-[war_peace_1.py](http://https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_1.py)
+[war_peace_1.py](https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_1.py)
 
 **Document frequency** (df) is the percentage of documents in which a search word occurs. In this case, we are talking about the chapters of a book, not documents. Each chapter is separated by a line with the text "[new chapter]". Let's write a program that calculates the "document frequency" of a "target word" in the book.
 
