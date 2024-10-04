@@ -2,7 +2,7 @@ target_word = "князь"
 
 def read_data():
     data = open('war_peace_processed.txt', 'rt').read()
-    return data.split('\n')
+    return data.split()
 
 data = read_data()
 
