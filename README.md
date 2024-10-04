@@ -1,5 +1,6 @@
 # "War and Peace", by Leo Tolstoy
 Let's apply data analysis to Leo Tolstoy's "War and Peace"!
+![unnamed](https://github.com/user-attachments/assets/64b147bc-8244-42b2-bda4-eb611f992394)
 
 I took the text from the work from the library [lib.ru](http://az.lib.ru/t/tolstoj_lew_nikolaewich/text_0073.shtml) and carried out the initial processing. The goal was to process the words from this work. I broke the text into individual words and output each one on a separate line. Additionally, in places where chapters begin, I added a line indicating the new chapter.
 
