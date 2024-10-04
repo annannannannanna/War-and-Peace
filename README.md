@@ -1,7 +1,7 @@
 # "War and Peace", by Leo Tolstoy
 Let's apply data analysis to Leo Tolstoy's "War and Peace"!
 
-I took the text from the work from the library [lib.ru](https://lms-cdn.skillfactory.ru/assets/courseware/v1/4c5a80c60b5a00504915158c4e17fe20/asset-v1:SkillFactory+DS-MASTERS+01SEPT2020+type@asset+block/war_peace_processed.txt) and carried out the initial processing. The goal was to process the words from this work. I broke the text into individual words and output each one on a separate line. Additionally, in places where chapters begin, I added a line indicating the new chapter.
+I took the text from the work from the library [lib.ru]([https://lms-cdn.skillfactory.ru/assets/courseware/v1/4c5a80c60b5a00504915158c4e17fe20/asset-v1:SkillFactory+DS-MASTERS+01SEPT2020+type@asset+block/war_peace_processed.txt](http://az.lib.ru/t/tolstoj_lew_nikolaewich/text_0073.shtml)) and carried out the initial processing. The goal was to process the words from this work. I broke the text into individual words and output each one on a separate line. Additionally, in places where chapters begin, I added a line indicating the new chapter.
 
 First, let's calculate the frequency of individual words used in the work. To do this, I will use a dictionary. I'm going to write a program that sorts all the words in the text and puts them in the dictionary. The counter will increase with each new word to keep track of how many times it occurs in the text.
 
