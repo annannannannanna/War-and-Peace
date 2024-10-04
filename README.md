@@ -4,6 +4,8 @@
 
 I took the text from the work from the library [lib.ru](http://az.lib.ru/t/tolstoj_lew_nikolaewich/text_0073.shtml) and carried out the initial processing. The goal was to process the words from this work. I broke the text into individual words and output each one on a separate line. Additionally, in places where chapters begin, I added a line indicating the new chapter.
 
+[war_peace_processed.txt](https://github.com/annannannannanna/War-and-Peace/blob/main/war_peace_processed.txt)
+
 First, let's calculate the frequency of individual words used in the work. To do this, I will use a dictionary. I'm going to write a program that sorts all the words in the text and puts them in the dictionary. The counter will increase with each new word to keep track of how many times it occurs in the text.
 
 The get method will help you find out which value corresponds to a specific key (word) in a dictionary. For example, words.get("word", 0) will either return a value from the dictionary or 0 if there is no such word in the dictionary yet.
